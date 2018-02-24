@@ -1,0 +1,43 @@
+{
+  "name": "__my_newproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "*",
+    "browser-sync": "*",
+    "css-mqpacker": "*",
+    "cssnano": "*",
+    "file-system": "*",
+    "gulp": "*",
+    "gulp-changed": "*",
+    "gulp-data": "*",
+    "gulp-html-prettify": "*",
+    "gulp-htmlclean": "*",
+    "gulp-if": "*",
+    "gulp-newer": "*",
+    "gulp-notify": "*",
+    "gulp-nunjucks-render": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-util": "*",
+    "path": "*",
+    "postcss-inline-svg": "*",
+    "postcss-svgo": "*"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Chrome >= 52",
+    "IE 11"
+  ]
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	{% include "partials/head.njk" %}
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<header>
+		{% include "partials/header.njk" %}
+	</header>
+	<main>
+		{% block content %}{% endblock %}
+	</main>
+	<footer>
+		{% include "partials/footer.njk" %}
+	</footer>
+	{% include "partials/scripts.njk" %}
+</body>
+</html>

@@ -1,0 +1,104 @@
+@mixin mq-min ($current-media) {
+	@media screen and (min-width: #{$current-media}) {
+		@content;
+	}
+}
+
+@mixin mq-max ($current-media) {
+	@media screen and (max-width: #{$current-media - 1px}) {
+		@content;
+	}
+}
+
+@mixin mq-between ($current-media-min, $current-media-max) {
+	@media screen and (min-width: #{$current-media-min}) and (max-width: #{$current-media-max - 1px}) {
+		@content;
+	}
+}
+
+@mixin img_pos_h {
+	max-height: 0;
+	width: auto;
+}
+
+@mixin img_pos_w {
+	max-width: 0;
+	height: auto;
+}
+
+@mixin aspect-ratio($ratio) {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		padding-bottom: $ratio;
+		height: 0;
+	}
+
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@mixin inline-svg($svg-name, $inline-clolor: none, $is-important: false) {
+	$important-plh: '';
+	@if ($is-important) {
+		$important-plh: ' !important';
+	}
+	flex-shrink: 0;
+	@if($inline-clolor == none){
+		background: svg-load("../img/#{$svg-name}.svg") center no-repeat#{$important-plh};
+	} @else {
+		background: svg-load("../img/#{$svg-name}.svg", fill=#{$inline-clolor}) center no-repeat#{$important-plh};
+	}
+}
+
+@function item-width ($columns-all, $columns-item, $gutter-size) {
+	$gutters-all: $columns-all - 1;
+	$gutters-in-item: $columns-item - 1;
+	$itogo: calc((((100% - (#{$gutters-all} * #{$gutter-size})) / #{$columns-all}) * #{$columns-item}) + (#{$gutters-in-item} * #{$gutter-size}));
+	@return $itogo;
+}
+
+@mixin margin-right-no-lastinraw($elem-in-row, $margin-size) {
+	&:not(:nth-of-type(#{$elem-in-row}n)) {
+		margin-right: $margin-size;
+	}
+}
+
+@mixin overflow-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin button-reset {
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button {
+		background: none;
+		border: 0;
+		color: inherit;
+		// cursor: white
+		font: inherit;
+		line-height: normal;
+		overflow: visible;
+		padding: 0;
+		-webkit-appearance: button; /* for input */
+		-webkit-user-select: none; /* for button */
+		-moz-user-select: none;
+		-ms-user-select: none;
+	}
+	input::-moz-focus-inner,
+	button::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+}

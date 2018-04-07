@@ -11,16 +11,19 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
     "browser-sync": "*",
     "css-mqpacker": "*",
     "cssnano": "*",
+    "del": "*",
     "file-system": "*",
-    "gulp": "*",
-    "gulp-changed": "*",
+    "gulp": "^4.0.0",
+    "gulp-babel": "*",
+    "gulp-concat": "*",
     "gulp-data": "*",
     "gulp-html-prettify": "*",
     "gulp-htmlclean": "*",
-    "gulp-if": "*",
     "gulp-newer": "*",
     "gulp-notify": "*",
     "gulp-nunjucks-render": "*",
@@ -28,7 +31,7 @@
     "gulp-postcss": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
-    "gulp-util": "*",
+    "gulp-uglify": "*",
     "path": "*",
     "postcss-inline-svg": "*",
     "postcss-svgo": "*"
@@ -38,6 +41,7 @@
     "> 1%",
     "last 2 versions",
     "Chrome >= 52",
+    "Safari >= 9",
     "IE 11"
   ]
 }

@@ -27,49 +27,49 @@ const concat = require ('gulp-concat');
 const uglify = require('gulp-uglify');
 
 //Directories here
-const workplace = `app/`;
-const pathSrc = `${workplace}src/`;
-const pathBuild = `${workplace}build/`;
+const workplace = `app`;
+const pathSrc = `${workplace}/src`;
+const pathBuild = `${workplace}/build`;
 const imgTypes = `(jpg|png|svg|jpeg|gif|ico)`;
 const fntTypes = `(woff|woff2|ttf|eot|otf)`;
 const pathBase = {
-	sass: `${pathSrc}scss/`,
-	data: `${pathSrc}_data/`,
-	njk: `${pathSrc}njk/`,
-	imgSrc: `${pathSrc}img/`,
-	imgBuild: `${pathBuild}img/`,
-	fntSrc: `${pathSrc}fonts/`,
-	fntBuild: `${pathBuild}fonts/`,
-	cssSrc: `${pathSrc}css/`,
-	css: `${pathBuild}css/`,
-	jsSrc: `${pathSrc}js/`,
-	jsBuild: `${pathBuild}js/`
+	sass: `${pathSrc}/scss`,
+	data: `${pathSrc}/_data`,
+	njk: `${pathSrc}/njk`,
+	imgSrc: `${pathSrc}/img`,
+	imgBuild: `${pathBuild}/img`,
+	fntSrc: `${pathSrc}/fonts`,
+	fntBuild: `${pathBuild}/fonts`,
+	cssSrc: `${pathSrc}/css`,
+	css: `${pathBuild}/css`,
+	jsSrc: `${pathSrc}/js`,
+	jsBuild: `${pathBuild}/js`
 };
 const pathFull = {
 	njk: {
-		pages: `${pathBase.njk}pages/**/*.+(njk)`,
-		watchedFiles: `${pathBase.njk}**/*.+(njk)`,
-		templatesBaseDir: `${pathBase.njk}templates/`,
-		templateExtras: `${pathBase.njk}templates/**/*.+(njk)`
+		pages: `${pathBase.njk}/pages/**/*.+(njk)`,
+		watchedFiles: `${pathBase.njk}/**/*.+(njk)`,
+		templatesBaseDir: `${pathBase.njk}/templates`,
+		templateExtras: `${pathBase.njk}/templates/**/*.+(njk)`
 	},
 	sass: {
-		fullPath: `${pathBase.sass}**/*.+(scss)`,
-		extras: `${pathBase.sass}includes/**/*.+(scss)`
+		fullPath: `${pathBase.sass}/**/*.+(scss)`,
+		extras: `${pathBase.sass}/includes/**/*.+(scss)`
 	},
 	data: {
-		path: `${pathBase.data}**/*.+(json)`
+		path: `${pathBase.data}/**/*.+(json)`
 	},
 	img: {
-		path: `${pathBase.imgSrc}**/*.+${imgTypes}`
+		path: `${pathBase.imgSrc}/**/*.+${imgTypes}`
 	},
 	js: {
-		path: `${pathBase.jsSrc}**/*.+(js)`
+		path: `${pathBase.jsSrc}/**/*.+(js)`
 	},
 	css: {
-		path: `${pathBase.cssSrc}**/*.+(css)`
+		path: `${pathBase.cssSrc}/**/*.+(css)`
 	},
 	fonts: {
-		path: `${pathBase.fntSrc}**/*.+${fntTypes}`
+		path: `${pathBase.fntSrc}/**/*.+${fntTypes}`
 	}
 };
 
@@ -99,7 +99,7 @@ const
 
 //------------- clean
 
-gulp.task('clean', () => del([`${pathBuild}**`]));
+gulp.task('clean', () => del([`${pathBuild}/**`]));
 
 
 //------------- html
@@ -107,7 +107,7 @@ gulp.task('clean', () => del([`${pathBuild}**`]));
 gulp.task('nunjucks-dev', () => gulp
 	.src(pathFull.njk.pages)
 	.pipe(data((file) => {
-			const dataFile = `${pathBase.data}${path.basename(file.path, '.njk')}.json`;
+			const dataFile = `${pathBase.data}/${path.basename(file.path, '.njk')}.json`;
 			return (fs.existsSync(dataFile)) ?
 				JSON.parse(fs.readFileSync(dataFile)) : {};
 	}))
@@ -128,7 +128,7 @@ gulp.task('nunjucks-dev', () => gulp
 gulp.task('nunjucks-build', () => gulp
 	.src(pathFull.njk.pages)
 	.pipe(data((file) => {
-		const dataFile = `${pathBase.data}${path.basename(file.path, '.njk')}.json`;
+		const dataFile = `${pathBase.data}/${path.basename(file.path, '.njk')}.json`;
 			return (fs.existsSync(dataFile)) ?
 				JSON.parse(fs.readFileSync(dataFile)) : {};
 	}))

@@ -10,3 +10,9 @@ Follow these simple steps to install and run this application on your machine:
 * start the server with `gulp` 
 * navigate to `http://localhost:3000/` to view the application.
 * when you are done, run `gulp prod` to get the prod version of your app
+
+## Features:
+* [Nunjucks](https://mozilla.github.io/nunjucks/) as a template engine
+* [SCSS](http://sass-lang.com) preprocessor for CSS ([autoprefixer](https://github.com/postcss/autoprefixer) included)
+* JS linting with [Eslint](https://eslint.org)
+* CSS linting with [Stylelint](http://stylelint.io)

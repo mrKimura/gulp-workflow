@@ -1,22 +1,30 @@
 {
-  "name": "__my_newproject",
+  "name": "myproject",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Andrey Francev",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "autoprefixer": "*",
-    "babel-core": "*",
-    "babel-preset-env": "*",
+    "babel-cli": "*",
+    "babel-eslint": "^10.0.1",
     "browser-sync": "*",
     "css-mqpacker": "*",
     "cssnano": "*",
     "del": "*",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
     "file-system": "*",
     "gulp": "^4.0.0",
     "gulp-babel": "*",
@@ -34,13 +42,18 @@
     "gulp-uglify": "*",
     "path": "*",
     "postcss-inline-svg": "*",
-    "postcss-svgo": "*"
+    "postcss-svgo": "*",
+    "prettier": "^1.14.3",
+    "stylelint": "^9.7.1",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.3.2"
   },
   "dependencies": {},
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "Chrome >= 52",
+    "Firefox > 30",
     "Safari >= 9",
     "IE 11"
   ]
